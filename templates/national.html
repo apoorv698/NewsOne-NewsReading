@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<meta http-equiv="refresh" content="600; URL=http://newsone-newsreading.appspot.com/national.html">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="A portfolio template that uses Material Design Lite.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<title>NewsOne - The News Reading App</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+		      <span class="mdl-layout-title">NewsOne</span>
+		    </div>
+				<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-layout--large-screen-only mdl-layout--fixed-tabs">
+							<a class="mdl-layout__tab" href="index.html">City</a>
+							<a class="mdl-layout__tab is-active" href="national.html">National</a>
+							<a class="mdl-layout__tab" href="global.html">Global</a>
+							<a class="mdl-layout__tab" href="business.html">Business</a>
+							<a class="mdl-layout__tab" href="sport.html">Sports</a>
+							<a class="mdl-layout__tab" href="entertain.html">Entertainment</a>
+							<a class="mdl-layout__tab" href="sci.html">Technology</a>
+				</div>
+			</header>
+			<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+				<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+						<a class="mdl-navigation__link" href="index.html">City</a>
+						<a class="mdl-navigation__link" href="national.html">National</a>
+						<a class="mdl-navigation__link" href="global.html">Global</a>
+						<a class="mdl-navigation__link" href="business.html">Business</a>
+						<a class="mdl-navigation__link" href="sport.html">Sports</a>
+						<a class="mdl-navigation__link" href="entertain.html">Entertainment</a>
+						<a class="mdl-navigation__link" href="sci.html">Technology</a>
+					</nav>
+			</div>
+			<main class="mdl-layout__content">
+				<div class="mdl-grid portfolio-max-width">
+					{% for ni in newsItem %}
+						<div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+							<div class="progress">
+								<div class="indeterminate"></div>
+							</div>
+							<div class="mdl-card__media">
+								<img class="article-image" src={{ni.imgurl}} border="0" alt="">
+							</div>
+							<div class="mdl-card__title">
+								<h2 class="mdl-card__title-text">{{ni.title}}</h2>
+							</div>
+							<div class="mdl-card__supporting-text">
+								{{ni.description}}
+							</div>
+							<div class="mdl-card__actions mdl-card--border">
+								<a target="_blank" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href={{ni.link}}>Read more <i class="material-icons">open_in_new</i></a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<footer class="mdl-mini-footer">
+					<div class="mdl-mini-footer__left-section">
+						<div class="mdl-logo">NewsOne - The News Reading App</div>
+					</div>
+					<div class="mdl-mini-footer__right-section">
+						<ul class="mdl-mini-footer__link-list">
+							<li><a href="mailto:adi.malhotra02@gmail.com">Contact: Aditya Malhotra</a></li>
+							<li><a href="mailto:sharma.apoorv@outlook.com">Apoorv Sharma </a></li>
+						</ul>
+					</div>
+				</footer>
+			</main>
+		</div>
+		<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	</body>
+
+</html>
